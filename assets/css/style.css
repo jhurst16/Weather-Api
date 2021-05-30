@@ -1,10 +1,55 @@
-.gradient{
-    background: linear-gradient(to top, #a8c0ff, #3f2b96);
+.gradient {
+  background: linear-gradient(to top, #3b6dc3, #230555);
 }
+
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.white{
-    color: white;
+
+.white {
+  color: white;
+}
+
+.search-btn {
+  background-color: #5aa2e9;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  height:40px;
+}
+
+input {
+    height: 40px;
+}
+
+.round-btn {
+  border-radius: 6px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.width-25 {
+  width: 25%;
+}
+.width-75 {
+ width: 75%;
+}
+
+.margin {
+  margin: 8px;
+}
+
+.border-black {
+    border: 2px solid black;
+}
+.left-margin {
+    margin-left: 10px;
 }
