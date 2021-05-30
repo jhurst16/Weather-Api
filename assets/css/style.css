@@ -1,0 +1,10 @@
+.gradient{
+    background: linear-gradient(to top, #a8c0ff, #3f2b96);
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+.white{
+    color: white;
+}
