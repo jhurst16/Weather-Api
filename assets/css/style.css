@@ -12,10 +12,10 @@
 }
 
 .header {
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 25em; 
+  width: 25em;
   height: 5em;
   margin: auto;
   border: 3em;
@@ -23,7 +23,6 @@
   font-style: sans-serif;
   font-size: x-large;
   text-shadow: -1px 0 black;
-  
 }
 
 .sub-header {
@@ -31,10 +30,14 @@
   font-style: italic;
 }
 
-.black-border{
+.black-border {
   border: 2px solid black;
-  width: 75%;
   margin: 10px 10px;
+  width: 75%;
+}
+
+.history-box {
+  width: 25%;
 }
 
 .flex-column {
@@ -43,7 +46,11 @@
 }
 
 .flex-row {
- display: flex;
+  display: flex;
+}
+
+.align-items {
+  align-items: center;
 }
 
 .list-style {
@@ -51,7 +58,11 @@
 }
 
 .card-size {
-  width:20%;
+  width: 20%;
   padding: 0px;
   margin: 0px;
+}
+
+.margin {
+  margin: 20px 0px 20px 0px;
 }

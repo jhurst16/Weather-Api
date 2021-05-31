@@ -18,18 +18,16 @@
     </header>
 </div>
 
-<div class="flex-row">
-    <div class="flex-column ">
-        <form>
-            <label for="city">Search for a City:</label><br />
-            <input id="city" type="text" placeholder="Enter a City...">
-        </form>
+<div class="flex-row align-items">
+    <div class="flex-column history-box">
+
+        <p class="center">Search for a City:</p>
+        <input id="city" type="text" placeholder="Enter a City...">
 
         <button type="button" class="btn btn-primary" id="searchButton">Search</button>
-
-        <h4>Search History</h4>
-        <div>
-            <ul id="searchHistory" class="list-style"></ul>
+        <h4 class="center">Search History</h4>
+        <div id="searchHistory">
+            <!-- buttons will be dynamically made here -->
         </div>
     </div>
 
@@ -42,7 +40,7 @@
     </div>
 </div>
 
-<h2 class="center">5 Day Forecast</h2>
+<h2 class="center margin">5 Day Forecast</h2>
 
 <div class="flex-row">
     <div class="flex-column card-size">

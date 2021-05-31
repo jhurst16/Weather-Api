@@ -9,7 +9,6 @@ function searchFunction1() {
 
 function addtotextbox(id) {
     $('#city').val(recentSearches[id]);
-    console.log(recentSearches[id]);
 }
 //empty array
 var recentSearches = [];
@@ -18,6 +17,7 @@ searchEl.on("click", searchFunction1)
 
 //display temp of searched city
 var getCityData = function (city) {
+    console.log(city)
     const apiWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=631b54059a7685cd2a3b02d495ec1018&units=imperial";
 
 
@@ -87,20 +87,24 @@ var getCityData = function (city) {
 
     //called from onclick
     function searchFunction(data) {
-        recentSearches.push($('#city').val()); 
-        console.log($('#city').val());
-        $('#city').val(""); 
-        $('#searchHistory').text(""); 
+        recentSearches.push($('#city').val());
+        $('#city').val("");
+        $('#searchHistory').text("");
 
         $.each(recentSearches, function (index, value) {
-            $('#searchHistory').append("<li class='historyItem'  onclick='addtotextbox(" + index + ")'>" + value + '</li>');
+            var button = $("<button class='btn btn-primary flex-column'  onclick='addtotextbox(" + index + ")'>" + value + '</button>')
+            button.on("click", function () {
+                getCityData($(this).text())
+            })
+
+            $('#searchHistory').append(button);
         });
+
     }
 
     //function for searching for next city
     function search() {
         var city = $("#city").val();
-        console.log("searching for " + city);
         recentSearches.push(city);
         buildSearchHistory();
     }
@@ -118,7 +122,4 @@ var getCityData = function (city) {
         $("#city").val(recentSearches[index]);
         search();
     }
-
-
-
 };
