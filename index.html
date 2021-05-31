@@ -1,43 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Weather Api</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Forecast</title>
 </head>
 
-<body>
-    <!-- top menu -->
-    <div class="d-flex justify-content-center gradient">
-        <nav class="navbar">
-            <span class="white navbar-brand mb-0 h1">Weather Dashboard</span>
-        </nav>
-    </div>
-    <!-- end top menu -->
+<div class="gradient">
+    <header class="header white">
+        <h1>Weather Dashboard</h1>
+        <h2 class="sub-header">Search for weather by city and get the 5-day forcast</h2>
+    </header>
+</div>
 
-    <!-- search for a city container/content -->
-    <div class="flex-row">
-    <div class="width-25">
-        <h2>Search for a City:</h2>
-        <div class="flex-column">
-            <input placeholder="Type Here..." class="margin round-btn">
-            <button type="button" class="search-btn white round-btn margin">Search</button>
+<div class="flex-row">
+    <div class="flex-column ">
+        <form>
+            <label for="city">Search for a City:</label><br />
+            <input id="city" type="text" placeholder="Enter a City...">
+        </form>
+
+        <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+
+        <h4>Search History</h4>
+        <div>
+            <ul id="searchHistory" class="list-style"></ul>
         </div>
     </div>
-    <div class="flex-column border-black width-75 left-margin">
-        <h2>Dynamically create city/date/logo search here</h2>
-        <p>Temp:</p>
-        <p>Wind:</p>
-        <p>Humidity:</p>
-        <p>UV Index:</p>
+
+    <div class="black-border">
+        <p class="center" id="currentCity">City</p>
+        <p class="center" id="currentTemp">Temperature</p>
+        <p class="center" id="currentWind">Wind</p>
+        <p class="center" id="currentHumidity">Humidity</p>
+        <p class="center" id="currentIndex">UV Index</p>
     </div>
+</div>
+
+<h2 class="center">5 Day Forecast</h2>
+
+<div class="flex-row">
+    <div class="flex-column card-size">
+        <h3 class="center">Day 1</h3>
+        <div class="card">
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="tempDay1"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="windDay1"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="humidityDay1"></p>
+            </div>
+        </div>
     </div>
-    <script src="./assets/js/script.js"></script>
+
+    <div class="flex-column card-size">
+        <h3 class="center">Day 2</h3>
+        <div class="card">
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="tempDay2"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="windDay2"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="humidityDay2"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-column card-size">
+        <h3 class="center">Day 3</h3>
+        <div class="card">
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="tempDay3"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="windDay3"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="humidityDay3"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-column card-size">
+        <h3 class="center">Day 4</h3>
+        <div class="card">
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="tempDay4"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="windDay4"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="humidityDay4"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-column card-size">
+        <h3 class="center">Day 5</h3>
+        <div class="card">
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="tempDay5"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="windDay5"></p>
+            </div>
+            <div class="col forecast bg-primary text-white mb-3 rounded">
+                <p id="humidityDay5"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
